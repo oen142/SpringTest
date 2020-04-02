@@ -17,7 +17,7 @@ public class HomeControllerTest {
     private MockMvc mvc;
 
     @Test
-    public void hello_가리턴된() throws Exception {
+    public void hello_return() throws Exception {
         String hello = "hello";
 
         mvc.perform(get("/hello"))
@@ -26,7 +26,7 @@ public class HomeControllerTest {
 
     }
     @Test
-    public void helloDto_가리턴된다() throws  Exception{
+    public void helloDto_return() throws  Exception{
         String name = "hellos";
         int amount = 10000;
 

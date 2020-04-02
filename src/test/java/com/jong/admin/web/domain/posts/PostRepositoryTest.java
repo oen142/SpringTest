@@ -26,7 +26,7 @@ public class PostRepositoryTest {
     }
 
     @Test
-    public void 게시글저장_불러오기() {
+    public void save_account_reboot() {
 
         String title = "테스트 게시글";
         String contents = "테스트 본문";
