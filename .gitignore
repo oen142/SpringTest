@@ -1,8 +1,10 @@
 # Project exclude paths
 .gradle
-.idea
+.idea/
 build/
-src/main/resources/application-oauth.properties
 
 /build/classes/java/main/
 /build/classes/java/test/
+src/main/java/com/jong/admin/config/
+src/test/
+src/main/resources/application-oauth.properties
