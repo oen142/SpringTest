@@ -39,6 +39,7 @@ dependencies {
  //   compile group: 'org.springframework.security.oauth', name: 'spring-security-oauth2', version: '2.4.0.RELEASE'
 //    compile('org.springframework.boot:spring-boot-starter-oauth2-clinet')
 
+    compile("org.mariadb.jdbc:mariadb-java-client")
 
     compile('org.springframework.boot:spring-boot-starter-oauth2-client')
     compile('org.springframework.session:spring-session-jdbc')
