@@ -1,31 +1,29 @@
 package com.jong.admin.web.dto;
 
-
 import com.jong.admin.domain.posts.Posts;
-import lombok.*;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 @Getter
-@Setter
 @NoArgsConstructor
-public class PostsRequestDto {
-
-
+public class PostsSaveRequestDto {
     private String title;
-    private String author;
     private String contents;
+    private String author;
 
     @Builder
-    public PostsRequestDto(String title, String author, String contents) {
+    public PostsSaveRequestDto(String title, String content, String author) {
         this.title = title;
+        this.contents = content;
         this.author = author;
-        this.contents = contents;
     }
-
-    public Posts toEntity() {
+    public Posts toEntity(){
         return Posts.builder()
                 .title(title)
-                .author(author)
                 .contents(contents)
+                .author(author)
                 .build();
+
     }
 }

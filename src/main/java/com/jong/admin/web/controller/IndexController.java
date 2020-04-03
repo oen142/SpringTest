@@ -1,17 +1,15 @@
 package com.jong.admin.web.controller;
 
 
-import com.jong.admin.web.dto.PostsListResposneDto;
-import com.jong.admin.web.dto.PostsRequestDto;
+import com.jong.admin.config.auth.LoginUser;
+import com.jong.admin.config.auth.dto.SessionUser;
+import com.jong.admin.service.PostsService;
 import com.jong.admin.web.dto.PostsResponseDto;
-import com.jong.admin.web.service.PostsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 
 @RequiredArgsConstructor
 @Controller
@@ -19,8 +17,11 @@ public class IndexController {
     private final PostsService postsService;
 
     @GetMapping("/")
-    public String index(Model model) {
+    public String index(Model model , @LoginUser SessionUser user) {
         model.addAttribute("posts" , postsService.findAllDesc());
+        if(user!= null){
+            model.addAttribute("name" , user.getName());
+        }
         return "index";
     }
 
