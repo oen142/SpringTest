@@ -15,9 +15,9 @@ cache:
 script: "./gradlew clean build"
 
 before_deploy:
-  - zip -r SpringTest *
+  - zip -r dreamakerSpring *
   - mkdir -p deploy
-  - mv SpringTest.zip deploy/SpringTest.zip
+  - mv dreamakerSpring.zip deploy/dreamakerSpring.zip
 
 deploy:
   - provider: s3
@@ -35,7 +35,7 @@ deploy:
     access_key_id: $AWS_ACCESS_KEY # Travis repo settings에 설정된 값
     secret_access_key: $AWS_SECRET_KEY # Travis repo settings에 설정된 값
     bucket: dreamakerbiz # S3 버킷
-    key: SpringTest # 빌드 파일을 압축해서 전달
+    key: dreamakerSpring.zip # 빌드 파일을 압축해서 전달
     bundle_type: zip
     application: dreamaker # 웹 콘솔에서 등록한 CodeDeploy 어플리케이션
     deployment_group: SpringTest # 웹 콘솔에서 등록한 CodeDeploy 배포 그룹
