@@ -37,7 +37,7 @@ deploy:
     bucket: dreamakerbiz # S3 버킷
     key: SpringTest.zip # 빌드 파일을 압축해서 전달
     bundle_type: zip
-    application: SpringTest # 웹 콘솔에서 등록한 CodeDeploy 어플리케이션
+    application: spring-boot-webservice-test # 웹 콘솔에서 등록한 CodeDeploy 어플리케이션
     deployment_group: spring-boot-webservice-test # 웹 콘솔에서 등록한 CodeDeploy 배포 그룹
     region: ap-northeast-2
     wait-until-deployed: true
